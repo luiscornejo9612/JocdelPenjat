@@ -10,6 +10,29 @@ function jocdelPenjat() {
                     numLetras+=" _";
                 }
                 console.log(numLetras)
+                var contador = 0;
+                do {
+                    letra = prompt("Ingresa una letra");
+                
+                    if (letra.length !== 1 || !esLetra(letra)) {
+                        console.log("Ingresa una única letra válida que no sea un número.");
+                    }
+                    else{
+                        var exist = palabra.includes(letra);
+                        for (let i = 0; i < longitud; i++) {
+                            if (exist != false) {
+                                console.log(letra);
+                                
+                            }
+                        }
+                        contador++;
+                    }
+                    
+
+                } while (contador != 6);
+                
+
+
             }
 
         
@@ -18,4 +41,11 @@ function jocdelPenjat() {
         }
     } while (num !== 3);
     console.log("Haz salido el bucle");
+}
+
+function esLetra(caracter) {
+   //verifica si el caracter es una letra (mayúscula o minúscula).
+    var expresionRegular = /^[a-zA-Z]$/;
+    // Usamos el método test para verificar si el caracter cumple con la expresión regular.
+    return expresionRegular.test(caracter);
 }
