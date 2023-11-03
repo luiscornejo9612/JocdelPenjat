@@ -30,7 +30,7 @@ function jocdelPenjat() {
                     
 
                 } while (contador != 6);
-                
+                console.log("haz ganado");
 
 
             }
