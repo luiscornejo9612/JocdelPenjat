@@ -12,44 +12,45 @@ function jocdelPenjatv2() {
 
         if (Number.isInteger(menu)) {
             if (menu === 1) {
-                partidasJugadas++;
+                partidasJugadas++; //Suma un intento 
                 let palabra = prompt("Ingresa la palabra");
-                palabra = palabra.toUpperCase();
-                var palabraEspacios = "";
+                palabra = palabra.toUpperCase();//Convertimos la palabra en mayúsculas
+                var palabraEspacios = ""; //Se guarda la palabra añadiendo un espacio entre cada letra
                 for (let index = 0; index < palabra.length; index++) {
                     palabraEspacios += palabra[index] + " ";
                 }
-                let arrayDeLetras = palabraEspacios.split('');
+                let arrayDeLetras = palabraEspacios.split('');//Palabra con espacios convertida a un array
 
-                var guiones = "";
-                for (let i = 0; i < palabra.length; i++) {
+                var guiones = ""; //Guiones ha mostrar al usuario
+                for (let i = 0; i < palabra.length; i++) { 
                     guiones += "_" + " ";
                 }
+
                 console.log(guiones);
-                let gionesArray = guiones.split('');
-                var contador = 6;
+                let guionesArray = guiones.split(''); //Convertimos los guiones en un array
+                var contador = 6; //Intentos permitidos 
                 var posiciones = []; // Almacena las posiciones de la letra encontrada
                 var palabraAdivinada = false;
                 
 
                 do {
                     var letra = prompt("Ingresa una letra");
-                    letra = letra.toUpperCase();
-                    if (letra.length !== 1 || !esLetra(letra)) {
+                    letra = letra.toUpperCase();//Convertimos la palabra en mayúsculas
+                    if (letra.length !== 1 || !esLetra(letra)) { //Comprueba que sea letra y solo admite un carácter
                         console.log("Solo se admiten letras");
                     } else {
-                        var exist = arrayDeLetras.includes(letra);
+                        var exist = arrayDeLetras.includes(letra);//Comprueba que letra ingresada se encuentre en la palabra
                         if (exist) {
                             for (let i = 0; i < arrayDeLetras.length; i++) {
                                 if (arrayDeLetras[i] === letra) {
                                     posiciones.push(i); // Almacena la posición
-                                    gionesArray[i] = letra;
+                                    guionesArray[i] = letra;
                                 }
                             }
-                            let texto = gionesArray.join('');
+                            let texto = guionesArray.join('');
                             console.log(texto);
                             
-                            if (!gionesArray.includes('_')) {
+                            if (!guionesArray.includes('_')) {
                                 palabraAdivinada = true;
                                 console.log("¡HAS GANADO!")
                                 partidasGanadas++;
@@ -75,7 +76,7 @@ function jocdelPenjatv2() {
             }
 
         }else {
-            console.log("Ingrese una opcion correcta.");
+            console.log("Ingrese una opción correcta.");
         }
     } while (menu !== 3);
 }
