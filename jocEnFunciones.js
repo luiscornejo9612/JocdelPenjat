@@ -1,7 +1,6 @@
 let partidasJugadas = 0;
 let partidasGanadas = 0;
 let partidasPerdidas = 0;
-
 function jugar() {
     partidasJugadas++;
     var menu = 1;
@@ -86,4 +85,31 @@ function generarGuiones(palabra) {
         guiones += "_" + " ";
     }
     return guiones;
+}
+
+function botonesAbc() {
+    // Obtener el contenedor donde se agregarán los botones
+    var contenedor = document.getElementById("botones-abc");
+
+    // Crear un array con las letras del alfabeto
+    var alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
+
+    // Iterar sobre cada letra y crear un botón para ella
+    alfabeto.forEach(function (letra) {
+        var boton = document.createElement("button");
+        boton.textContent = letra;
+        
+        boton.addEventListener("click", function() {
+            // Llamar a la función insertarLetra y pasar la letra como argumento
+            var letraPresionada = insertarLetra(letra);
+            console.log("Letra seleccionada: " + letraPresionada);
+        });
+
+        contenedor.appendChild(boton);
+    });
+}
+document.addEventListener("DOMContentLoaded", botonesAbc);
+
+function insertarLetra(letra) {
+    return letra;
 }
