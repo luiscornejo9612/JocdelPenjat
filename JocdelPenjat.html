@@ -5,11 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="jocEnFunciones.js"></script>
+    <style>
+        .botones {
+            background-color: rgb(209, 226, 236);
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+    
+        #jugar {
+            border-radius: 10px;
+            background-color: rgb(3, 85, 3);
+            color: white;
+            border: none;
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        #estadisticas {
+            border-radius: 10px;
+            background-color: rgb(17, 181, 202);
+            border: none;
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        
+    </style>
+    
 
 </head>
 <body>
-    <button onclick="menu()">JUGAR</button>
-    <button onclick="verEstadisticas()">JUGAR</button>
+    <div>
+        <p id="guiones"></p>
+    </div>
+
+    <div class="botones">
+        <button id="jugar" onclick="jugar()">INICIAR PARTIDA</button>
+        <button id="estadisticas" onclick="verEstadisticas()">VER ESTADÍSTICAS</button>
+    </div>
+
+    <div>
+
+    </div>
+    
+    <script>
+
+    </script>
 
 </body>
 </html>
