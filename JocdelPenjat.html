@@ -26,6 +26,10 @@
             font-size: 16px;
         }
 
+        #jugar:hover {
+            background-color: rgb(30, 218, 93);
+        }
+
         #estadisticas {
             border-radius: 10px;
             background-color: rgb(17, 181, 202);
@@ -35,28 +39,44 @@
             font-size: 16px;
         }
 
+        #estadisticas:hover {
+            background-color: rgb(112, 236, 245);
+        } 
         
+        #guiones {
+            background-color: rgb(209, 226, 236);
+            color: rgb(34, 31, 31);
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            font-size: 150px;
+        }
+
+        #botones-abc{
+            background-color: rgb(209, 226, 236);
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
     </style>
     
 
 </head>
 <body>
-    <div>
-        <p id="guiones"></p>
-    </div>
+    
 
     <div class="botones">
         <button id="jugar" onclick="jugar()">INICIAR PARTIDA</button>
-        <button id="estadisticas" onclick="verEstadisticas()">VER ESTADÍSTICAS</button>
+        <button id="estadisticas" onclick="verEstadisticas()">VER ESTADÍSTICAS</button>     
     </div>
 
-    <div>
-
-    </div>
+    <div id="guiones"></div>
     
-    <script>
-
-    </script>
-
+    <div id="botones-abc"></div>
+    
 </body>
 </html>

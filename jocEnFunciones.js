@@ -8,7 +8,6 @@ function jugar() {
     if (Number.isInteger(menu)) {
         if (menu === 1) {
             let palabra = prompt("Ingresa la palabra");
-            // Resto del código relacionado con la opción de jugar
             palabra = palabra.toUpperCase();//Convertimos la palabra en mayúsculas
             var palabraEspacios = ""; //Se guarda la palabra añadiendo un espacio entre cada letra
             for (let index = 0; index < palabra.length; index++) {
@@ -16,9 +15,9 @@ function jugar() {
             }
             let arrayDeLetras = palabraEspacios.split('');//Palabra con espacios convertida a un array
 
-            var guiones = ""; //Guiones ha mostrar al usuario
-            guiones = generarGuiones(palabra);
-
+            var resultadoDiv = document.getElementById("guiones");
+            resultadoDiv.textContent = generarGuiones(palabra);
+            var guiones = generarGuiones(palabra);
             console.log(guiones);
             let guionesArray = guiones.split(''); //Convertimos los guiones en un array
             var contador = 6; //Intentos permitidos 
@@ -87,3 +86,33 @@ function generarGuiones(palabra) {
     }
     return guiones;
 }
+
+function botonesAbc() {
+    // Obtener el contenedor donde se agregarán los botones
+    var contenedor = document.getElementById("botones-abc");
+
+    // Crear un array con las letras del alfabeto
+    var alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
+
+    // Iterar sobre cada letra y crear un botón para ella
+    alfabeto.forEach(function (letra) {
+        var boton = document.createElement("button");
+        boton.textContent = letra;
+        
+        boton.addEventListener("click", function() {
+            // Llamar a la función insertarLetra y pasar la letra como argumento
+            var letraPresionada = insertarLetra(letra);
+            console.log("Letra seleccionada: " + letraPresionada);
+        });
+
+        contenedor.appendChild(boton);
+    });
+}
+document.addEventListener("DOMContentLoaded", botonesAbc);
+
+function insertarLetra(letra) {
+    return letra;
+}
+
+
+
