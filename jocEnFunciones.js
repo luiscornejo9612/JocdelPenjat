@@ -1,7 +1,6 @@
 let partidasJugadas = 0;
 let partidasGanadas = 0;
 let partidasPerdidas = 0;
-
 function jugar() {
     partidasJugadas++;
     var menu = 1;
